@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Invalid Coordinates', undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + '. It is currently '+ body.current.temperature + ' degrees out. There is a ' + body.current.precip + '% chance of rain.')
+            callback(undefined, body.current.weather_descriptions[0] + '. It is currently '+ body.current.temperature + ' degrees out. There is a ' + body.current.precip + '% chance of rain. It feels like ' + body.current.feelslike + ' degrees.')
+            console.log(body)
         }
     })
 }
